@@ -3,19 +3,17 @@ package org.jsonbus;
 import android.app.Activity;
 import android.webkit.WebView;
 
-public class SampleEchoHandler
+public class SampleEchoHandler implements JSONBusHandler
 {
-  Activity myactivity;
-  WebView myview;
+  JSONBusActivity myactivity;
 
-  public SampleEchoHandler(Activity a, WebView v)
+  public SampleEchoHandler(JSONBusActivity activity)
   {
-    myactivity = a;
-    myview = v;
+    myactivity = activity;
   }
 
   public void jsonmessage(String s)
   {
-    myview.loadUrl ("javascript:window.echocb('{echo:"+s+"}')"  );
+    myactivity.sendJavascript("javascript:window.echocb('{echo:"+s+"}')");
   }
 }

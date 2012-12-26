@@ -13,7 +13,7 @@ public class JSONBusSampleApp extends JSONBusActivity
   {
     super.onCreate(savedInstanceState);
 
-    myView.addJavascriptInterface(new SampleEchoHandler(this, myView), "SampleEchoHandler");
-    myView.loadUrl("file:///android_asset/index.html");
+    addHandler(new SampleEchoHandler(this), "SampleEchoHandler");
+    loadUrl("file:///android_asset/index.html");
   }
 }

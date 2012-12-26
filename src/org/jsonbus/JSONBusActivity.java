@@ -18,7 +18,20 @@ public class JSONBusActivity extends Activity
 
     myView = (WebView) findViewById(R.id.mywebview);
     myView.getSettings().setJavaScriptEnabled(true);
-    //myView.addJavascriptInterface(new SampleEchoHandler(this, myView), "SampleEchoHandler");
-    //myView.loadUrl("file:///android_asset/index.html");
+  }
+
+  public void addHandler(JSONBusHandler handler, String name)
+  {
+    myView.addJavascriptInterface(handler, name);
+  }
+
+  public void loadUrl(String url)
+  {
+    myView.loadUrl(url);
+  }
+
+  public void sendJavascript(String s)
+  {
+    myView.loadUrl("javascript:" + s);
   }
 }
