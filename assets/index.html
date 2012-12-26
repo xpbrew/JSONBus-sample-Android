@@ -4,15 +4,11 @@
 function echocb(jsonresult) {
   document.write("<b>echo result cb: </b>" + jsonresult);
 }
-function testcb(s1) {
-  document.write("<b>test cb: </b>" + s1);
-}
 </script>
 </head>
 <body>
 <b>body test</b><br/>
 <script>
-  //MyTestHandler.test("{a:1}");
   SampleEchoHandler.jsonmessage("{a:1}");
 </script>
 </body>
