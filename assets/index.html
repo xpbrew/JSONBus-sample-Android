@@ -4,12 +4,16 @@
 function echocb(jsonresult) {
   document.write("<b>echo result cb: </b>" + jsonresult);
 }
+function datecb(jsonresult) {
+  document.write("<b>date picker result cb: </b>" + jsonresult);
+}
 </script>
 </head>
 <body>
 <b>body test</b><br/>
 <script>
   SampleEchoHandler.jsonmessage("{a:1}");
+  DatePickerPlugin.jsonmessage("{a:1}");
 </script>
 </body>
 </html>

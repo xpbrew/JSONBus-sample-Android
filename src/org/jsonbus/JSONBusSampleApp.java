@@ -14,6 +14,7 @@ public class JSONBusSampleApp extends JSONBusActivity
     super.onCreate(savedInstanceState);
 
     addHandler(new SampleEchoHandler(this), "SampleEchoHandler");
+    addHandler(new DatePickerPlugin(this), "DatePickerPlugin");
     loadUrl("file:///android_asset/index.html");
   }
 }
