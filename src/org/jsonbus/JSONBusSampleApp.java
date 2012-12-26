@@ -18,16 +18,7 @@ public class JSONBusSampleApp extends Activity
 
     myView = (WebView) findViewById(R.id.mywebview);
     myView.getSettings().setJavaScriptEnabled(true);
-    myView.loadUrl("file:///android_asset/index.html");
-    //myView.addJavascriptInterface(new MyTestHandler(), "MyTestHandler");
     myView.addJavascriptInterface(new SampleEchoHandler(this, myView), "SampleEchoHandler");
-  }
-
-  public class MyTestHandler
-  {
-    public void test(String s)
-    {
-      myView.loadUrl("javascript:window.testcb('"+s+"')");
-    }
+    myView.loadUrl("file:///android_asset/index.html");
   }
 }
