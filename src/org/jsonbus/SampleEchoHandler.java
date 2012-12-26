@@ -14,6 +14,6 @@ public class SampleEchoHandler implements JSONBusHandler
 
   public void jsonmessage(String s)
   {
-    myactivity.sendJavascript("javascript:window.echocb('{echo:"+s+"}')");
+    myactivity.sendJavascript("window.echocb('{echo:"+s+"}')");
   }
 }
