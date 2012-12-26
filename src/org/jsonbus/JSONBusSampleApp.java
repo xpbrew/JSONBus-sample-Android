@@ -5,19 +5,14 @@ import android.os.Bundle;
 
 import android.webkit.WebView;
 
-public class JSONBusSampleApp extends Activity
+public class JSONBusSampleApp extends JSONBusActivity
 {
-  WebView myView;
-
   /** Called when the activity is first created. */
   @Override
   public void onCreate(Bundle savedInstanceState)
   {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.main);
 
-    myView = (WebView) findViewById(R.id.mywebview);
-    myView.getSettings().setJavaScriptEnabled(true);
     myView.addJavascriptInterface(new SampleEchoHandler(this, myView), "SampleEchoHandler");
     myView.loadUrl("file:///android_asset/index.html");
   }
